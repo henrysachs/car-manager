@@ -28,3 +28,8 @@ Installationsanleitung siehe: https://devcenter.heroku.com/articles/getting-star
 
 danach muss man sich via ```heroku Login``` auf der kommandozeile anmelden.
 
+Heroku erlaubt leider nur ein projekt pro Repository deshalb benötigen wir ein 2. Repository für den 2. Step.
+
+nun können wir über die heroku website ein projekt erstellen hier wählen wir create project aus. Danach wählen wir die region und verbinden es mit unserem Git repository. falls bis hierhin noch keins erstellt wurde kann ich github empfehlen dies macht das erstellen sehr einfach. Nach dem verbinden mit unserem github account und dem konkreten projekt können wir den Branch der deployed werden soll auswählen. Standardmässig ist dies master. Danach klicken wir auf deploy app und bekommen danach die möglichkeit view. Dadurch erhalten wir unsere URL für die Api zugriffe. Die Oberfläche hat außerdem oben rechts den button open app der dasselbe macht. Nun geben wir bespielsweise im Browser
+
+https://<APPNAME>.herokuapp.com/api/cars ein und erhalten eine Liste von autos.
