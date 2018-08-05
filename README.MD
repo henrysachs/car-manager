@@ -20,3 +20,11 @@ in unserem fall könnte scripts so aussehen
   },
 dann kann der server mit npm run server gestartet werden
 in step 1 ist die Datenbank lediglich "in memory" heißt bei jedem neustart verliert sie ihren Zustand deshalb benötigt man eine Datenbank die in Step 2 angebunden wird.
+
+## Deployment
+
+Das deployment geschieht auf Heroku, da dies eine schnelle kostenlose möglichkeit ist seine api zu testen. Hierfür benötigen wir einen Account sowie die Heroku CLI
+Installationsanleitung siehe: https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+danach muss man sich via ```heroku Login``` auf der kommandozeile anmelden.
+
