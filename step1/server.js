@@ -54,6 +54,10 @@ router.route('/cars')
     .post((req, res) => {
         console.log(req.body);
         res.statusCode = 200;
+        // if more than 10 items in the array remove the first one
+        if (cars.length > 10) {
+            cars.shift();
+        }
         cars.push(req.body);
         res.json(cars);
     })

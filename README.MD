@@ -19,3 +19,4 @@ in unserem fall könnte scripts so aussehen
     "server": "./node_modules/nodemon/bin/nodemon.js server.js"
   },
 dann kann der server mit npm run server gestartet werden
+in step 1 ist die Datenbank lediglich "in memory" heißt bei jedem neustart verliert sie ihren Zustand deshalb benötigt man eine Datenbank die in Step 2 angebunden wird.
