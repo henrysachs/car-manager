@@ -2,11 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+// create an instance of the express router which allows creating routes
+var router = express.Router();
+
+
 /*
  * handels json parsing
- * Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+ * Parse incoming request bodies in a middleware before your handlers,
+ * available under the req.body property.
  */
 app.use(bodyParser.json());
+
 /* 
  * just allow string and array like objects in the req body but you cant have json in json objects
  * else there is the possibility for Cross-Site Request Forgery Attacks and more securing needs to be done
@@ -44,20 +50,24 @@ let cars = [{
     },
 ];
 
-app.get('/cars', (req, res) => {
-    res.json(cars);
-});
+router.route('/cars')
+    .post((req, res) => {
+        console.log(req.body);
+        res.statusCode = 200;
+        cars.push(req.body);
+        res.json(cars);
+    })
+    .get((req, res) => {
+        res.json(cars);
+    });
 
-app.post('/cars', (req, res) => {
-    console.log(req.body);
-    res.statusCode = 200;
-    cars.push(req.body);
-    res.json(cars);
-
-});
+/*
+ * register our car routes and prefix them with /api
+ */
+app.use('/api', router);
 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    console.log('server started on port ' + port)
-})
+    console.log('server started on port ' + port);
+});
