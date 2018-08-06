@@ -65,9 +65,17 @@ router.route('/cars')
         res.json(cars);
     })
     .delete((req, res) => {
-        res.statusCode = 200;
-        cars.pop();
-        res.json(cars);
+
+        if (cars.length == 0) {
+            res.statusCode = 400;
+            res.err({
+                "error": "no more cars to delete"
+            });
+        } else {
+            res.statusCode = 200;
+            cars.pop();
+            res.json(cars);
+        }
     });
 
 /*
