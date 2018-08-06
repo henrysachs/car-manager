@@ -19,9 +19,19 @@ git clone https://github.com/henrysachs/car-manager.git
 npm install
 ```
 
+starten des server
+
+``` bash
+node server.js
+```
+
+oder Nodemon nutzen.
+
 Postman zum apiaufruf
 
 http://localhost:5000/hello im browser
+
+## nodemon
 
 nodemon erlaubt den "Hot reload" wenn änderung am code => server neustart
 nodemon KANN global installiert werden dann kann man den server starten 
@@ -39,6 +49,9 @@ in unserem fall könnte scripts so aussehen
 ```
 
 dann kann der server mit npm run server gestartet werden
+
+## Achtung
+
 in step 1 ist die Datenbank lediglich "in memory" heißt bei jedem neustart verliert sie ihren Zustand deshalb benötigt man eine Datenbank die in Step 2 angebunden wird.
 
 ## Deployment
