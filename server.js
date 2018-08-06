@@ -63,6 +63,11 @@ router.route('/cars')
     })
     .get((req, res) => {
         res.json(cars);
+    })
+    .delete((req, res) => {
+        res.statusCode = 200;
+        cars.pop();
+        res.json(cars);
     });
 
 /*

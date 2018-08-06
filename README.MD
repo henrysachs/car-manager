@@ -1,9 +1,16 @@
-Vorraussetzung
-Node js Npm 
+# Wie erstelle ich eine API
 
-npm init 
+## Vorraussetzung
+
+Node js > 8
+Npm > 5
+Express framework
+
+npm init
 npm install express body-parser
 npm install -D nodemon
+
+Postman zum apiaufruf
 
 http://localhost:5000/hello im browser
 
