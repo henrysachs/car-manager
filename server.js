@@ -67,12 +67,13 @@ router.route('/cars')
     .delete((req, res) => {
 
         if (cars.length == 0) {
-            res.statusCode = 400;
-            res.err({
-                "error": "no more cars to delete"
+            // Errorhandling if no cars send 400 and json
+            res.status(400);
+            res.json({
+                'error': 'no more cars to delete'
             });
         } else {
-            res.statusCode = 200;
+            res.status(200);
             cars.pop();
             res.json(cars);
         }
